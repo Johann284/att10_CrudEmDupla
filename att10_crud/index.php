@@ -14,7 +14,7 @@
 
 include 'bd.php';
 
-$sql = "SELECT d.fk_professor, d.fk_aula, a.sala_aula, a.dia_aula, p.nome_professor, d.horario_aula FROM diario AS d INNER JOIN professores AS p ON id_professor = fk_professor INNER JOIN aulas AS a ON id_aula = fk_aula;";
+$sql = "SELECT d.fk_professor, d.fk_aula, a.sala_aula, a.dia_aula, a.hora_aula, a.materia_aula, d.anotacoes, p.nome_professor, d.horario_aula FROM diario AS d INNER JOIN professores AS p ON id_professor = fk_professor INNER JOIN aulas AS a ON id_aula = fk_aula;";
 
 $result = $conn -> query($sql);
 
@@ -27,6 +27,7 @@ if ($result -> num_rows > 0) {
             <th>Hora da Aula: </th>
             <th>Dia da Aula</th>
             <th>Sala da Aula: </th>
+            <th>Anotações: </th>
             <th>Ações: </th>
         </tr>
     ";
