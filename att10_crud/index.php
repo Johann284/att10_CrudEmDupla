@@ -8,13 +8,13 @@
 // Ideia: no quadro de horário pode ser possível alterar o dado de uma aula
 
 
+// nome Professor, ID do professor, dia da aula, sala da aula, ID da aula
 
-
-// ============== READ ==============
+// ============== READ ============== //
 
 include 'bd.php';
 
-$sql = "SELECT * FROM diario";
+$sql = "SELECT * FROM aulas";
 
 $result = $conn -> query($sql);
 
@@ -23,8 +23,6 @@ if ($result -> num_rows > 0) {
         <tr>
             <th>ID: </th>
             <th>Nome: </th>
-            <th>Email: </th>
-            <th>Data de Criação: </th>
             <th>Ações: </th>
         </tr>
     ";
@@ -32,21 +30,17 @@ if ($result -> num_rows > 0) {
     while($row = $result -> fetch_assoc()) {
 
         echo "  <tr>
-                    <td>{$row['id']}</td>
-                    <td>{$row['name']}</td>
-                    <td>{$row['email']}</td>
-                    <td>{$row['created_at']}</td>
+                    <td>{$row['id_aula']}</td>
+                    <td>{$row['dia_aula']}</td>
                     <td>
-                    <a href='update.php?id={$row['id']}'>Editar</a>
+                    <a href='update.php?id={$row['id_aula']}'>Editar</a>
                     <a href='delete.php'>Excluir</a>
                     </td>
                 </tr>
         ";
     }
     echo "</table>";
-} else {
-    echo "Nenhum registro encontrado";
-}
+} 
 $conn -> close();
 ?>
 
