@@ -12,7 +12,7 @@
 
 // ============== READ ==============
 
-include 'db.php';
+include 'bd.php';
 
 $sql = "SELECT * FROM diario";
 
@@ -58,7 +58,8 @@ $conn -> close();
 </head>
 <body>
     <h3>Quadro de Horário</h3>
-    <button href="add_professor.php">Adicionar Professor</button>
-    <button href="add_aula.php">Adicionar Aula</button>
+    <a href="add_professor.php"><button>Adicionar Professor</button></a>
+    <a href="add_aula.php"><button>Criar Aulas</button></a>
+
 </body>
 </html>
