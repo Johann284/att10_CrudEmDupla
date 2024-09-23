@@ -6,7 +6,8 @@ include"bd.php";
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sala_aula = $_POST['sala'];
         $dia = $_POST['dia'];
-        if($sala_aula == null || $dia == null){
+        $professor = $_POST['professor'];
+        if($sala_aula == null || $dia == null || $professor == null){
             echo 'Valor inválido';
         } else {
             $sql = "INSERT INTO aulas (sala_aula,dia_aula) VALUE ('$sala_aula', '$dia')";
@@ -15,12 +16,9 @@ include"bd.php";
             }else{
                 echo "Erro" . $sql . "<br>" . $conn -> error;
             }
-        }
-        
-
-
-        
+        } 
     }
+
  $conn -> close();
 ?>
 <html lang="pt-BR">
@@ -43,6 +41,8 @@ include"bd.php";
           <option value="quintaFeira">Quinta-Feira</option>
           <option value="sextaFeira">Sexta-Feira</option>
         </select>
+        <label for="professor">Professor: </label>
+        <input type="text" name="professor" require>          
         <br>
         <input type="submit" value="Adicionar">
     </form>

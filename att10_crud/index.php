@@ -14,15 +14,19 @@
 
 include 'bd.php';
 
-$sql = "SELECT * FROM aulas";
+$sql = "SELECT * FROM diario INNER JOIN professores ON id_professor = fk_professor INNER JOIN aulas ON id_aula = fk_aula";
 
 $result = $conn -> query($sql);
 
 if ($result -> num_rows > 0) {
     echo "<table border = '1'>
         <tr>
-            <th>ID: </th>
-            <th>Nome: </th>
+            <th>ID do Professor: </th>
+            <th>Nome do Professor: </th>
+            <th>ID da aula: </th>
+            <th>Hora da Aula: </th>
+            <th>Dia da Aula</th>
+            <th>Sala da Aula: </th>
             <th>Ações: </th>
         </tr>
     ";
@@ -30,8 +34,12 @@ if ($result -> num_rows > 0) {
     while($row = $result -> fetch_assoc()) {
 
         echo "  <tr>
-                    <td>{$row['id_aula']}</td>
+                    <td>{$row['fk_professor']}</td>
+                    <td>{$row['nome_professor']}</td>
+                    <td>{$row['fk_aula']}</td>
+                    <td>{$row['horario_aula']}</td>
                     <td>{$row['dia_aula']}</td>
+                    <td>{$row['sala_aula']}</td>
                     <td>
                     <a href='update.php?id={$row['id_aula']}'>Editar</a>
                     <a href='delete.php'>Excluir</a>
@@ -40,7 +48,9 @@ if ($result -> num_rows > 0) {
         ";
     }
     echo "</table>";
-} 
+} else {
+    echo "Nenhum registro encontrado";
+}
 $conn -> close();
 ?>
 
