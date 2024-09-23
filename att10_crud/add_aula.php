@@ -2,7 +2,7 @@
 // Deve ser possível inserir uma nova aula no banco de dados.
 
 include"bd.php";
-
+// este if está incompleto já que os dados estõa confusos e não sabemos os valores a serem inseridos na tabela "aulas"
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sala_aula = $_POST['sala'];
         $dia = $_POST['dia'];
