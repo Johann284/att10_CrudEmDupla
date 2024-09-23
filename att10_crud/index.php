@@ -14,7 +14,7 @@
 
 include 'bd.php';
 
-$sql = "SELECT * FROM diario INNER JOIN professores ON id_professor = fk_professor INNER JOIN aulas ON id_aula = fk_aula";
+$sql = "SELECT d.fk_professor, d.fk_aula, a.sala_aula, a.dia_aula, p.nome_professor, d.horario_aula FROM diario AS d INNER JOIN professores AS p ON id_professor = fk_professor INNER JOIN aulas AS a ON id_aula = fk_aula;";
 
 $result = $conn -> query($sql);
 
@@ -35,14 +35,14 @@ if ($result -> num_rows > 0) {
 
         echo "  <tr>
                     <td>{$row['fk_professor']}</td>
-                    <td>{$row['nome_professor']}</td>
+                    <td>{$row['nome_professor']}</td> 
                     <td>{$row['fk_aula']}</td>
                     <td>{$row['horario_aula']}</td>
                     <td>{$row['dia_aula']}</td>
                     <td>{$row['sala_aula']}</td>
                     <td>
-                    <a href='update.php?id={$row['id_aula']}'>Editar</a>
-                    <a href='delete.php'>Excluir</a>
+                    <a href='alterar_dados.php?id={$row['id_aula']}'>Editar</a>
+                    <a href='deletar.php'>Excluir</a>
                     </td>
                 </tr>
         ";
