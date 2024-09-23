@@ -38,7 +38,7 @@ if ($result -> num_rows > 0) {
                     <td>{$row['fk_professor']}</td>
                     <td>{$row['nome_professor']}</td> 
                     <td>{$row['fk_aula']}</td>
-                    <td>{$row['horario_aula']}</td>
+                    <td>{$row['hora_aula']}</td>
                     <td>{$row['dia_aula']}</td>
                     <td>{$row['sala_aula']}</td>
                     <td>

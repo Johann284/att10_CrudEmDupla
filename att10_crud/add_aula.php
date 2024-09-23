@@ -40,6 +40,24 @@ include"bd.php";
           <option value="quintaFeira">Quinta-Feira</option>
           <option value="sextaFeira">Sexta-Feira</option>
         </select>
+
+        <label for="materia">Matéria da Aula: </label>
+        <select name="dia" require>
+          <option value="matematica">Matemática:</option>
+          <option value="portugues">Português</option>
+          <option value="ingles">Inglês</option>
+          <option value="historia">História</option>
+          <option value="geografia">Geografia</option>
+          <option value="filosofia">Filosofia</option>
+          <option value="quimica">Química</option>
+          <option value="fisica">Física</option>
+          <option value="biologia">Biologia</option>
+          <option value="ef">Educação Física</option>
+          <option value="tecnico">Técnico</option>
+        </select>
+
+        <label for="hora">Sala da Aula: </label>
+        <input type="time" name="hora" require>
         <br>
         <input type="submit" value="Adicionar">
     </form>
