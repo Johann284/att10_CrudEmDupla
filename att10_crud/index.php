@@ -14,44 +14,44 @@
 
 include 'bd.php';
 
-$sql = "SELECT d.fk_professor, d.fk_aula, a.sala_aula, a.dia_aula, a.hora_aula, a.materia_aula, a.anotacoes, p.nome_professor FROM diario AS d INNER JOIN professores AS p ON id_professor = fk_professor INNER JOIN aulas AS a ON id_aula = fk_aula;";
+$sql = "SELECT d.fk_professor, d.fk_aula, a.sala_aula, a.dia_aula, a.hora_aula, a.materia_aula, a.anotacoes, p.nome_professor 
+        FROM aulas AS a 
+        INNER JOIN diario AS d ON a.id_aula = d.fk_aula 
+        INNER JOIN professores AS p ON d.fk_professor = p.id_professor";
+$result = $conn->query($sql);
 
-$result = $conn -> query($sql);
-
-if ($result -> num_rows > 0) {
-    echo "<table border = '1'>
-        <tr>
-            <th>ID do Professor: </th>
-            <th>Nome do Professor: </th>
-            <th>ID da aula: </th>
-            <th>Hora da Aula: </th>
-            <th>Dia da Aula</th>
-            <th>Sala da Aula: </th>
-            <th>Anotações: </th>
-            <th>Ações: </th>
-        </tr>
-    ";
-    
-    while($row = $result -> fetch_assoc()) {
-
-        echo "  <tr>
-                    <td>{$row['fk_professor']}</td>
-                    <td>{$row['nome_professor']}</td> 
-                    <td>{$row['fk_aula']}</td>
-                    <td>{$row['hora_aula']}</td>
-                    <td>{$row['dia_aula']}</td>
-                    <td>{$row['sala_aula']}</td>
-                    <td>
-                    <a href='alterar_dados.php?id={$row['id_aula']}'>Editar</a>
+if ($result->num_rows > 0) {
+    echo "<table border='1'>
+            <tr>
+                <th>Id da Aula</th>
+                <th>Dia da Aula</th>
+                <th>Sala da Aula</th>
+                <th>Hora da Aula</th>
+                <th>Professor Responsável</th>
+                <th>Matéria da Aula</th>
+                <th>Anotações</th>
+                <th>Ações</th>
+            </tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>{$row['fk_aula']}</td>
+                <td>{$row['dia_aula']}</td> 
+                <td>{$row['sala_aula']}</td>
+                <td>{$row['hora_aula']}</td>
+                <td>{$row['nome_professor']}</td>
+                <td>{$row['materia_aula']}</td>
+                <td>{$row['anotacoes']}</td>
+                <td>
+                    <a href='alterar_dados.php?id={$row['fk_aula']}'>Editar</a>
                     <a href='deletar.php'>Excluir</a>
-                    </td>
-                </tr>
-        ";
+                </td>
+              </tr>";
     }
     echo "</table>";
 } else {
     echo "Nenhum registro encontrado";
 }
+
 $conn -> close();
 ?>
 
