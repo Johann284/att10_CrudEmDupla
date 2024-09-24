@@ -98,6 +98,8 @@ $conn->close();
     <title>Create</title>
 </head>
 <body>
+<br>
+
 
     <form method="POST" action="">
         <label for="sala">Sala da Aula: </label>
@@ -105,11 +107,11 @@ $conn->close();
         
         <label for="dia">Dia da aula: </label>
         <select name="dia" required>
-          <option value="segundaFeira">Segunda-Feira</option>
-          <option value="tercaFeira">Terça-Feira</option>
-          <option value="quartaFeira">Quarta-Feira</option>
-          <option value="quintaFeira">Quinta-Feira</option>
-          <option value="sextaFeira">Sexta-Feira</option>
+          <option value="Segunda-Feira">Segunda-Feira</option>
+          <option value="Terca-Feira">Terça-Feira</option>
+          <option value="Quarta-Feira">Quarta-Feira</option>
+          <option value="Quinta-Feira">Quinta-Feira</option>
+          <option value="Sexta-Feira">Sexta-Feira</option>
         </select>
 
         <label for="materia">Matéria da Aula: </label>
