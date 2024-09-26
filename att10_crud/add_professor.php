@@ -39,7 +39,10 @@ if ($result->num_rows > 0) {
                         <input type='hidden' name='id_professor' value='{$row['id_professor']}'>
                         <input type='submit' name='delete' value='Deletar Dados'>
                     </form>
-                    <a href='alterar_dados.php?id={$row['id_professor']}'>Editar</a>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='id_professor' value='{$row['id_professor']}'>
+                        <input type='submit' name='alterar' value='Alterar Dados'>
+                    </form>
                 </td>
               </tr>";
     }

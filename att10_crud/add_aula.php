@@ -77,8 +77,11 @@ if ($result->num_rows > 0) {
                         <input type='hidden' name='id_aula' value='{$row['fk_aula']}'>
                         <input type='submit' name='delete' value='Deletar Dados'>
                     </form>
-                    <a href='alterar_dados.php?id={$row['fk_aula']}'>Editar</a>
-                </td>
+                    <form>
+                        <input type='hidden' name='id_aula' value='{$row['fk_aula']}'>
+                        <input type='submit' name='delete' value='Deletar Dados'>
+                    </form>
+                    </td>
               </tr>";
     }
     echo "</table>";
