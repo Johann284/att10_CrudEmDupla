@@ -77,10 +77,6 @@ if ($result->num_rows > 0) {
                         <input type='hidden' name='id_aula' value='{$row['fk_aula']}'>
                         <input type='submit' name='delete' value='Deletar Dados'>
                     </form>
-                    <form>
-                        <input type='hidden' name='id_aula' value='{$row['fk_aula']}'>
-                        <input type='submit' name='delete' value='Deletar Dados'>
-                    </form>
                     </td>
               </tr>";
     }

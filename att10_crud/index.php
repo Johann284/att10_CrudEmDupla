@@ -45,10 +45,6 @@ if ($result->num_rows > 0) {
                         <input type='hidden' name='id_aula' value='{$row['fk_aula']}'>
                         <input type='submit' name='delete' value='Deletar Dados'>
                     </form>
-                    <form method='POST' action=''>
-                        <input type='hidden' name='id_aula' value='{$row['id_aula']}'>
-                        <input type='submit' name='delete' value='Deletar Dados'>
-                    </form>
                 </td>
               </tr>";
     }
@@ -103,6 +99,6 @@ $conn -> close();
     <h4>Ações:</h4>
     <a href="add_professor.php"><button>Adicionar Professor</button></a>
     <a href="add_aula.php"><button>Criar Aulas</button></a>
-
+    <a href="alterar_dados.php"><button>Alterar Dados</button></a>
 </body>
 </html>
