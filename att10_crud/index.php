@@ -97,8 +97,8 @@ $conn -> close();
     
     <h3>Quadro de Horário</h3>
     <h4>Ações:</h4>
-    <a href="add_professor.php"><button>Adicionar Professor</button></a>
+    <a href="add_professor.php"><button>Professores</button></a>
     <a href="add_aula.php"><button>Criar Aulas</button></a>
-    <a href="alterar_dados.php"><button>Alterar Dados</button></a>
+    <a href="alterar_dados.php"><button>Alterar Aulas</button></a>
 </body>
 </html>
