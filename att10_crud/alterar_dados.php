@@ -49,14 +49,8 @@ if ($result->num_rows > 0) {
 }
 
 if (isset($_POST["alterar"])) {
-    $id_update = $_POST["fk_aula"];
-    echo "ID da aula a ser alterada: $id_update
-
-    
-    
-    
-    
-    ";
+    $id_update = $_POST["id_aula"]; // achando o valor do que foi clicado na tabela
+    echo "ID da aula a ser alterada: $id_update";
 }
 
 // Consulta SQL para buscar os professores

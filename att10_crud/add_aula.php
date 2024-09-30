@@ -11,7 +11,7 @@ if (isset($_POST["adicionar"])) {
     $professor_id = $_POST['professor']; // Agora estamos pegando o ID diretamente do select
     
     // Valida os campos
-    if (empty($sala_aula) || empty($dia) || empty($materia) || empty($hora) || empty($anotacoes) || empty($professor_id)) {
+    if (empty($sala_aula) || empty($dia) || empty($materia) || empty($hora) || empty($professor_id)) {
         echo 'Valor inválido';
     } else {
         // Inserir os dados na tabela `aulas`
