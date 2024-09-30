@@ -154,7 +154,19 @@ $conn->close();
 
 <form method="POST" action="add_professor.php">
     Nome: <input type="text" name="nome_professor" required>
-    Formação: <input type="text" name="formacao" required>
+    Formação: <select name="formacao" required>
+          <option value="matematica">Matemática</option>
+          <option value="portugues">Português</option>
+          <option value="ingles">Inglês</option>
+          <option value="historia">História</option>
+          <option value="geografia">Geografia</option>
+          <option value="filosofia">Filosofia</option>
+          <option value="quimica">Química</option>
+          <option value="fisica">Física</option>
+          <option value="biologia">Biologia</option>
+          <option value="ef">Educação Física</option>
+          <option value="tecnico">Técnico</option>
+        </select>
     CPF: <input type="text" name="cpf" required>
     <input type="submit" name="adicionar">
 </form>
